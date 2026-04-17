@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-
+  const API = import.meta.env.VITE_BASE_URL;
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -50,7 +50,7 @@ const Login = () => {
       console.log("PAYLOAD:", payload);
 
       const res = await axios.post(
-        `http://localhost:4000/api/users/${state}`,
+        `${API}/api/users/${state}`,
         payload
       );
 
